@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Treasure Island</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aladin" />
+</head>
+<body style="font-family:Aladin;cursor:url(static/cursors/cursor_small.png), auto;">
+	<style type="text/css">
+		#myVideo{
+		  position: absolute;
+		  right: 0;
+		  bottom: 0;
+		  width: 100%;
+		  z-index: 0;
+			}
+	</style>
+	
+	<div class="jumbotron bg-dark text-white" style="background-color: transparent; padding-top: 15px;margin-top: 0px;padding-bottom: 80px; margin-bottom: -30px;">
+		<video autoplay muted loop id="myVideo">
+			<source src="static/video/island.mp4" type="video/mp4">
+		</video>
+
+		<br><h1> 
+			<div align="center" style="background-color: black; opacity: 70%;">
+				<label style="font-size: 60px;color: white;cursor:url(static/cursors/cursor_small.png), auto;">The Treasure Island 
+				</label>
+			</div>
+		</h1><br>	
+		<form action="{{url_for('hunt_bp.island')}}" method="POST">
+		<center>
+			<table class="table table-borderless table-default" style="width:100%;">
+				
+	    		<tr class="table table-default">
+
+						<td class="table table-default" style="width:25%;padding-top:0px;font-weight: bold;"><br><br>
+							<div class="card" style="width: 18rem; border-radius: 1em; background:black; opacity: 70%">
+	    					<div class="card-body" style="margin-top: 10px; color: white; 
+	    					">
+	    					<h3 class="card-title"><b>Login</b></h3><br>
+							<h5>
+								
+							<input type="text" class = "form-control form-control-lg" minlength="5" maxlength="15" name="in_user" placeholder="Enter User Id"> <br><br>
+							<input type="password" minlength="6" maxlength="35" class = "form-control form-control-lg" name="in_pass" placeholder="Enter Password">
+  							</h5>
+							<div style="margin-top: 40px;">
+								<button type="submit" class="btn btn-lg btn-dark" style="background: linear-gradient(356deg, rgba(2,0,36,1) 22%, rgba(222,213,16,1) 100%);cursor:url(static/cursors/cursor_small.png), auto;" value="login_req" name="login_btn"><b>Login</b></button>
+								<button type="submit" value="signup_req" class="btn btn-lg btn-warning" style="margin-left: 40px;cursor:url(static/cursors/cursor_small.png), auto;" name="signup_btn"><b>Register</b></button>
+							</div>
+							</div>
+							</div>
+						</td>
+				</tr>
+		</table></center>
+		</form>
+
+	</div>
+
+</body>
+</html>

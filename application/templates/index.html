@@ -1,0 +1,96 @@
+<html>
+<head>
+	<br><br>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Train+One&family=Zen+Dots&display=swap" rel="stylesheet">
+	<h1 style="font-size: 50px; font-family: 'Train One', cursive;"><center><b>Welcome to My Home Page</b></center></h1><br><br>
+</head>
+<body style="margin-left: 5px; font-family: Arial">
+	<div class="jumbotron" style="margin-top: -2px;padding-top: 30px;" >
+		
+
+		<form action="{{url_for('home_bp.home_index')}}" method="POST">
+		<div class="row">
+ 		<div class="col-12">
+	  		<div class="card-deck">
+
+				<div class="card" style="width: 18rem;">
+		  			<img class="card-img-top" src="/static/images/randomness.jpg" alt="Card image cap">
+		  			<div class="card-body">
+		    			<h5 class="card-title">Generate Random Numbers</h5>
+		    			<p class="card-text">Generate custom length random numbers in multiple encoding choices.</p>
+		    			<button class="btn btn-success" type="submit" name="otp_btn" value="otp_value">PRNG</button>
+		  			</div>
+
+				</div>
+
+				<div class="card" style="width: 18rem;">
+		  			<img class="card-img-top img-adjusted" src="/static/images/hash.png" alt="Card image cap">
+		  			<div class="card-body">
+		    			<h5 class="card-title">Generate Hash</h5>
+		    			<p class="card-text">Generate hash of any text using different algorithms.</p>
+		    			<button class="btn btn-success" type="submit" name="hash_btn" value="hash_value">Hash-IT</button>
+		  			</div>
+				</div>
+
+				<div class="card" style="width: 18rem;">
+		  			<img class="card-img-top img-adjusted" src="/static/images/invert.jpg" alt="Card image cap">
+		  			<div class="card-body">
+		    			<h5 class="card-title">Invert Hash</h5>
+		    			<p class="card-text">Invert different family of hashes.</p>
+		    			<button class="btn btn-success" type="submit" name="invert_btn" value="invert_value">Invert Hash</button>
+		  			</div>
+				</div>
+
+			    <div class="card" style="width: 18rem;">
+			        <img class="card-img-top img-adjusted" src="/static/images/vtscan.jpg" alt="Card image cap">
+			        <div class="card-body">
+			          <h5 class="card-title">Virus Total Lookup</h5>
+			          <p class="card-text">Scan for malicious files or URLs.</p>
+			          <button class="btn btn-success" type="submit" name="vt_btn" value="vt_value">VT Lookup</button>
+			        </div>
+			    </div>
+			</div>
+	  		<br><br>
+		  	<div class="card-deck">
+			  	<div class="card" style="width: 18rem;">
+			        <img class="card-img-top" src="/static/images/keywords.jpg" alt="Card image cap">
+			        <div class="card-body">
+			          <h5 class="card-title">Youtube Keyword Hunt AI</h5>
+			          <p class="card-text">Find the optimum keywords for your Youtube videos (Coming Soon)</p>
+			          <button class="btn btn-warning" type="submit" name="keywords_btn" value="keywords_value" disabled="True">Keyword Hunt</button>
+			        </div>
+			    </div>
+
+			    <div class="card" style="width: 18rem;">
+			        <img class="card-img-top" src="/static/images/shodan.jpg" alt="Card image cap">
+			        <div class="card-body">
+			          <h5 class="card-title">Shodan Search</h5>
+			          <p class="card-text">Search IoT the devices on the internet (Coming Soon).</p>
+			          <button class="btn btn-danger" type="submit" name="shodan_btn" value="shodan_value" disabled="True">Find IoT Devices</button>
+			        </div>
+			    </div>
+			    <div class="card" style="width: 18rem;">
+			        <img class="card-img-top" src="/static/images/treasurehunt.jpg" alt="Card image cap">
+			        <div class="card-body">
+			          <h5 class="card-title">Play Treasure Hunt</h5>
+			          <p class="card-text">Visit the Treasure Island to unlock the secrets.</p>
+			          <button class="btn btn-primary" type="submit" name="treasure_btn" value="treasure_value">Treasure Hunt</button>
+			        </div>
+			    </div>
+			    <div class="card" style="width: 18rem;">
+			        <img class="card-img-top" src="/static/images/map.jpg" alt="Card image cap">
+			        <div class="card-body">
+			          <h5 class="card-title">Live Threat Map</h5>
+			          <p class="card-text">Look at online threats happening right now accross the world (Coming Soon).</p>
+			          <button class="btn btn-warning" type="submit" name="map_btn" value="map_value" disabled="True">Live Threat Map</button>
+			        </div>
+			    </div>
+		  	</div>
+		</div>
+		</div>
+		</form>
+	</div>
+</body>
+</html>

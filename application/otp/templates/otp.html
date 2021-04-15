@@ -1,0 +1,76 @@
+<html>
+<head>
+	<br>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<h1><center><b>Pseudo Random Number Generator</b></center></h1>
+	<form  action="{{url_for('otp_bp.otpGen')}}" method="POST">
+		<button type="submit" name="home_key" value="home_value" class="btn btn-info">Home</button>
+	</form>
+</head>
+
+<body style="margin-left: 5px; font-family: Arial">
+	<script>
+	function copyme()
+		{
+			var copyText = document.getElementById("otp_value");
+			copyText.disabled=false;
+			copyText.select();
+			document.execCommand("copy");
+			copyText.disabled=true;
+		}
+
+	</script>
+	<div class="jumbotron" style="margin-top: -2px;padding-top: 30px;" >
+	<form action="{{url_for('otp_bp.otpGen')}}" method="POST">
+		
+		<br><label><h2> Random Number Generator: </h2></label><br><br>
+		<center><table class="table table-borderless table-default" style="width:100%;">
+    			
+	    		<tr class="table table-default" style="width:300px;">
+					<td class="table table-default" style="width:20%;padding-top:30px;font-weight: bold;">
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label" style="padding-top:6px; font-weight: bold;"><h4>Length:</h4></label>&nbsp&nbsp 
+						 	<input type="input" class="form-control" style="width:60px; margin-left:70px;" name="length_input" maxlength="2" value="{{otp_length}}" oninput="myRange.value = length_input.value" >
+						</div>
+						
+						<div class="slidecontainer">
+  							<input type="range" min="1" max="99" value={{otp_length}} class="slider" id="myRange" oninput="length_input.value = myRange.value;" >
+						</div>
+						<br>
+						<label><h4>Encoding:</h4></label>
+						<h5>
+						<div class="form-check">
+  							<input class="form-check-input" type="radio" name="encoding" id="deci" value="deci" checked>
+  							<label class="form-check-label" for="deci">Decimal</label>
+  						</div>
+						<div class="form-check">
+  							<input class="form-check-input" type="radio" name="encoding" id="hexa" value="hexa">
+  							<label class="form-check-label" for="hexa">Hexa-Decimal</label>
+  						</div>
+  						<div class="form-check">
+  							<input class="form-check-input" type="radio" name="encoding" id="b64" value="b64">
+  							<label class="form-check-label" for="b64">Base-64</label>
+  						</div>
+  						</h5>
+						<div style="margin-top: 40px;">
+							<button type="submit" class="btn btn-lg btn-secondary">Generate</button> 
+						</div>
+					</td>
+					<td class="table table-secondary" style="width:1000px; padding-top:70px;padding-bottom: 50px; font-weight: bold;">
+						<div class="input-group input-group-lg">
+							<div class="input-group-prepend">
+    							<span class="input-group-text" id="basic-addon1">{{encoding_type}}</span>
+  							</div>
+							<input type="text" class = "form-control" id="otp_value" disabled="true" value="{{otp_val}}">
+						</div>
+						<br><br>
+						<div>
+							<button type="button" class="btn btn-lg btn-info" name="copy_btn" onclick="copyme()">Copy</button>
+						</div>
+					</td>
+				</tr>
+		</table></center>
+		</form>
+	</div>
+</body>
+</html>

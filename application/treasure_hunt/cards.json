@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "607726d316c04e2864ae76d1"
+  },
+  "quest_id_1": [
+    "hands_on",
+    "Hands on the deck ",
+    "This is where you start this challenge. The path to the chest is far, but is not impossible. Only those who believe in themselves make it to the end. The rest perishes. Remember to stck to the basics. Your journey begins here.",
+    "quest_sum_1",
+    "Thank you for saving me, Human.\n I will reward you some day."
+  ],
+  "quest_id_2": [
+    "the_order",
+    "The Philosopher",
+    "There is more path to reality than just one. The more you think the more you realize how little you know. This is what our universe teaches us- to be humble. There is no end to imagination an hence no end to possibilites...",
+    "quest_sum_2",
+    "I am an interesting number. \n Ain't I?"
+  ],
+  "quest_id_3": [
+    "the_raid",
+    "Hey Sherlock",
+    "Finding a piece of fact in this world is like finding a pebble in a beach. There are so many right answers, although only one gets accepted usually. So it is all about trying. You don't know. Next time you might be right.",
+    "quest_sum_3",
+    "I like the way you think.\n But this is just the beginning."
+  ],
+  "quest_id_4": [
+    "track_part",
+    "The secret message",
+    "You might be the strongest of all, but even the strongest of the strongest meets their fate. Destiny is written but it gives you a few hints and chances to escape your fate. But arrogance makes you blind and eventually you fall.",
+    "quest_sum_4",
+    "I wish had known my enemies\n more that I knew I my allies."
+  ]
+}]

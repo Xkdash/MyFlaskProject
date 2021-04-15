@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "607726dd16c04e2864ae76d2"
+  },
+  "hands_on": [
+    "Although you humans kill us,\n we still feed you and provide you with oxygen.\n Please save me and \n I will tell you the answer.",
+    "q1.jpg",
+    "q1.jpg",
+    40,
+    "quest_id_1"
+  ],
+  "the_order": [
+    "I am everywhere in nature.\n From the petals of flowers to \n to modern designs, I am that\n immeasurable standard that \ndefines both beauty and stability.",
+    "q2.jpg",
+    "goldenratio",
+    60,
+    "quest_id_2"
+  ],
+  "the_raid": [
+    "This old letter wants to remember\n a place that's long forgotten.\n It only remembers some island and \nthat its colour still haven't faded away.\n Help her find the name of lost island.",
+    "q3.jpg",
+    "islandcove",
+    60,
+    "quest_id_3"
+  ],
+  "track_part": [
+    "Hdbtdct lpcih id zxaa bt.Qji lwd?\n\n I cant read it. What is it? \nIs it anything to do with the date?",
+    "q4.jpg",
+    "brutus",
+    80,
+    "quest_id_4"
+  ]
+}]

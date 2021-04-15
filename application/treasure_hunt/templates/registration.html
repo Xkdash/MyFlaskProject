@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Treasure Island</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<script type="text/javascript">
+		function check(){
+			rp=document.getElementByid("reg_pass").value;
+			rc=document.getElementByid("reg_pass_conf").value;
+			if (rp != rc){
+				alert("wrong password")
+			}
+		}
+	</script>
+	<br><h1> <center>Welcome to Treasure Island </center></h1>
+	<div class="jumbotron" style="padding-top: 70px;margin-top: 30px;padding-bottom: 40px;">
+		<form action="{{url_for('hunt_bp.register')}}" method="POST" oninput='reg_pass_conf.setCustomValidity(reg_pass.value != reg_pass_conf.value ? "Passwords do not match." : "")'>
+			<center>
+				<div class="card" style="width: 30rem; border-radius: 0.8em;">
+					<div class="card-body" style="margin-top: 30px">
+						<h3 class="card-title"><b>Pirate Registration</b></h3><br>
+						<h5>
+							<input type="text" class = "form-control form-control-lg" id="reg_user" name="reg_user" placeholder="User Name" minlength="5" maxlength="15" pattern="[A-Z][a-z][0-9][\_]" required><br>
+							<input type="email" class = "form-control form-control-lg" id="reg_email" name="reg_email" placeholder="Email" required><br>
+							<input type="password" class = "form-control form-control-lg" id="reg_pass" name="reg_pass" placeholder="Enter Password" required minlength="6" maxlength="15" >
+							<br>
+							<input type="password" class = "form-control form-control-lg" name="reg_pass_conf" id="reg_pass_conf" placeholder="Re-enter Password" required>
+						</h5>
+
+						<div style="margin-top: 40px;">
+							<button type="submit" class="btn btn-lg btn-success" name="reg_btn" value="reg_request">
+								<b>Register</b>
+							</button> 
+						</div>
+					</div>
+				</div>
+			</center>
+		</form>
+
+	</div>
+
+</body>
+</html>

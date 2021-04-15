@@ -1,0 +1,46 @@
+<html>
+<head>
+	<br>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<h1><center><b>Welcome to Hash-it</b></center></h1>
+	<form  action="{{url_for('hashit_bp.hashit')}}" method="POST">
+		<button type="submit" name="home_key" value="home_key" class="btn btn-info">Home</button>
+	</form>
+</head>
+<body style="margin-left: 5px; font-family: Arial">
+	<div class="jumbotron" style="margin-top: -2px;padding-top: 30px;" >
+	<form action="{{url_for('hashit_bp.hashit')}}" method="POST">
+		<label> <h5>Enter a text to #Hash: </h5></label>
+		<input type="input" class="form-control" style="width:400px;" name="plaintext"><br>
+		<button type="submit" class="btn btn-dark">Calculate</button> <br><br>
+		<label><h3> Hash: </h3></label>
+		<table class="table table-dark" style="width:10%;border: 1px solid black;">
+    			<tr align="center">
+    				<th> Type </th>
+					<th> Value </th>
+				</tr>
+	    		<tr class="table table-dark" style="width:10%; border: 1px solid black;">
+					<td class="table table-info" style="width:10%; border: 1px solid black; text-align: center; "><b>Text</b></td>
+					<td class="table table-info" style="width:10%; border: 1px solid black; "><b>{{plaintext}}</b></td>
+				</tr>
+				<tr class="table table-dark" style="width:10%; border: 1px solid black;">
+					<td class="table table-info" style="width:10%; border: 1px solid black; text-align: center;"><b>MD5-128</b></td>
+					<td class="table table-info" style="width:10%; border: 1px solid black;"><b>{{md5}}</b></td>
+				</tr>
+				<tr class="table table-dark" style="width:10%; border: 1px solid black;">
+					<td class="table table-info" style="width:10%; border: 1px solid black; text-align: center;"><b>SHA-1</b></td>
+					<td class="table table-info" style="width:10%; border: 1px solid black;"><b>{{sha1}}</b></td>
+				</tr>
+				<tr class="table table-dark" style="width:10%; border: 1px solid black;">
+					<td class="table table-info" style="width:10%; border: 1px solid black;text-align: center;"><b>SHA-256</b></td>
+					<td class="table table-info" style="width:10%; border: 1px solid black;"><b>{{sha256}}</b></td>
+				</tr>
+				<tr class="table table-dark" style="width:10%; border: 1px solid black;">
+					<td class="table table-info" style="width:10%; border: 1px solid black;text-align: center;"><b>SHA-512</b></td>
+					<td class="table table-info" style="width:10%; border: 1px solid black;"><b>{{sha512}}</b></td>
+				</tr>
+		</table>
+		</form>
+	</div>
+</body>
+</html>

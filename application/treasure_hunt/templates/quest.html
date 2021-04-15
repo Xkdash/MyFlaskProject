@@ -1,0 +1,125 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aladin" />
+</head>
+<body bgcolor="black" style="font-family:Aladin;cursor:url(../../static/cursors/cursor_small.png), auto;" >
+	<style type="text/css">
+	#myVideo{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+</style>
+
+	<div class="jumbotron jumbotron-fluid" style="padding-top: 0px; background-color: transparent; height:100vh;" >
+		<video autoplay muted loop id="myVideo" >
+			<source src="../../static/video/hunt.mp4" type="video/mp4">
+		</video>
+		<div style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); margin-left:0px; margin-right: 0px;padding-left: 20px; padding-right: 20px;">
+			<div class="text-center">
+				<div style="float: left; padding-top: 10px;">
+					<form action="{{url_for('hunt_bp.quest',quest_name=quest_name,user_name=user_name)}}" method="POST">
+						<button class="btn btn-primary" type="submit" name="home_btn" value="home" style="cursor:url(../../static/cursors/cursor_small.png), auto;">Home
+						</button>
+					</form>
+					</div>
+				<label style="font-weight: bold;font-size: 50px;color: white;height: 10vh;">{{quest_title}}</label>
+
+				<div style="float: right; padding-top: 10px;">
+					<form action="{{url_for('hunt_bp.quest',quest_name=quest_name,user_name=user_name)}}" method="POST">
+						<button class="btn btn-primary" type="submit" name="logout_btn" value="logout" style="cursor:url(../../static/cursors/cursor_small.png), auto;">Logout
+						</button>
+					</form>
+					</div>
+				</div>
+			</div>
+		<form action="{{url_for('hunt_bp.quest',quest_name=quest_name,user_name=user_name)}}" method="POST">
+			<table style="cursor:url(../../static/cursors/cursor_small.png), auto;">
+				<tr>
+					<td style="width:50vw; height: 82vh;background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9));cursor:url(../../static/cursors/cursor_small.png), auto; padding-left: 10px;margin-right: 0px;padding-right: 0px;">
+
+
+						<div class="tab-content" style="height: 80%;margin-top: 0px; padding-top:0px;cursor:url(../../static/cursors/cursor_small.png), auto; letter-spacing: 1px;color:white; white-space:pre;margin-bottom:20px;overflow-y:scroll;">
+							<div style="text-align: left; white-space:pre;">
+							<h2>Question:</h2>
+							</div>
+						 <div style="text-align: right; margin-right: 20px;font-size: 20px;">
+						 	{{quest_text}}
+						 </div>
+						</div>
+						
+	    				<div style="float: right;margin-right: 40px;">
+	    					{% if open_flag ==True %}
+								<div class="form-group row" style="opacity: 70%;">
+									<input type="text" class = "form-control form-control-lg" minlength="1" maxlength="30" name="answer_text" style="width: 200px" placeholder="Enter Answer">
+									<button type="submit" class="btn btn-lg btn-dark" style="margin-left: 30px;background: linear-gradient(356deg, rgba(2,0,36,1) 22%, rgba(222,213,16,1) 100%);cursor:url(../../static/cursors/cursor_small.png), auto;" value="submit_req" name="submit_btn"><b>Submit</b>
+									</button>
+								</div>
+							{% else %}
+							Yeaah Solved
+								<meta http-equiv="refresh" content="0" /> 
+							{% endif %}
+	    				</div>	
+	    			</td>
+
+	    			{% if not quest_image =="" %}
+					<td style="width: 50vw;vertical-align: top; cursor:url(../../static/cursors/cursor_small.png), auto;">
+						<br><br>
+						<div class="container-fluid" >
+							<img src="../../static/images/quest/{{quest_image}}" width="80%" height="auto">
+						</div>
+					</td>
+					{% endif %}
+				</tr>
+			</table>
+		</form>
+		
+	</div>
+	<footer>
+		<div style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)); margin-left:0px; margin-right: 0px; margin-top: -78px; height: 7vh;padding-top: 4px;cursor:url(../../static/cursors/cursor_small.png), auto;">
+				<div align="left" style="cursor:url(../../static/cursors/cursor_small.png), auto;">
+					<a href="#" class="btn btn-info" role="button" data-toggle="modal" style="margin-right:10px; cursor:url(../../static/cursors/cursor_small.png), auto;" data-target="#stats_modal">Leaderboard</a>
+					<a href="#" class="btn btn-info" role="button" data-toggle="modal" style="margin-right:10px; cursor:url(../../static/cursors/cursor_small.png), auto;"data-target="#rules_modal">Rules</a>
+				</div>
+		</div>
+	</footer>
+	<div class="modal fade" id="stats_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 			 <div class="modal-dialog"  align="center" role="document">
+			    			<div  class="modal-content" style="width: 420px;height:590px;border-radius:0.5em;background-image:url(../../static/images/page.gif);background-size: contain; opacity: 95%; color: brown;">
+			      				<div class="modal-header" style="border:none;padding-left: 45px; padding-top: 40px;">
+			        				<h4 class="modal-title" id="exampleModalLabel">Leaderboard</h4>
+			        				<button type="button" class="close" style="cursor:url(../../static/cursors/cursor_small.png), auto;" data-dismiss="modal" aria-label="Close">
+			          					<span aria-hidden="true">&times;</span>
+			        				</button>
+			      				</div>
+			      			<div class="modal-body"  style="text-align: left;font-size: 20px;padding-left: 45px;white-space:pre;margin-top: -20px;">{{leaderboard}}</div>
+			      				<div class="modal-footer" style="border:none;">
+			        				<button type="button" class="btn btn-secondary" style="background: linear-gradient(356deg, rgba(2,0,36,1) 22%, rgba(222,213,16,1) 100%); cursor:url(../../static/cursors/cursor_small.png), auto;margin-right: 20px;margin-bottom: 20px;" data-dismiss="modal">Close</button>
+			      				</div>
+			    			</div>
+			  			</div>
+					</div>
+			<div class="modal fade" id="rules_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			 			 <div class="modal-dialog"  align="center" role="document">
+			    			<div  class="modal-content" style="width: 420px;height:590px;border-radius:0.5em;background-image:url(../../static/images/page.gif);background-size: contain; opacity: 95%; color: brown;">
+			      				<div class="modal-header" style="border:none; padding-left: 45px; padding-top: 40px;">
+			        				<h4 class="modal-title" id="exampleModalLabel">Rules</h4>
+			        				<button type="button" class="close" style="cursor:url(../../static/cursors/cursor_small.png), auto;" data-dismiss="modal" aria-label="Close">
+			          					<span aria-hidden="true">&times;</span>
+			        				</button>
+			      				</div>
+			      			<div class="modal-body"  style="text-align: left;font-size: 20px;padding-left: 45px;margin-right:20px;">The rules are straightforward. <br> You have a few questions that you have to solve. <br>Each question has some points that you earn after solving it. <br> You can have as many attempts as you want. There are no negative points for that. In the future I might bring that in my dynamic grading system.<br><br>Also, keep an eye on the leaderboard to see how your hunting compares to others.</div>
+			      				<div class="modal-footer" style="border:none;">
+			        				<button type="button" class="btn btn-secondary" style="background: linear-gradient(356deg, rgba(2,0,36,1) 22%, rgba(222,213,16,1) 100%); cursor:url(../../static/cursors/cursor_small.png), auto;margin-right: 20px;margin-bottom: 20px;" data-dismiss="modal">Close</button>
+			      				</div>
+			    			</div>
+			  			</div>
+					</div>
+</body>
+</html>

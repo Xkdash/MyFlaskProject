@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6077ac70ecabca7b6aca0bfe"
+  },
+  "kdtest12345": [
+    "kdtest12345",
+    "sds@sdsadsa.com",
+    "58b4e38f66bcdb546380845d6af27187",
+    true
+  ]
+},{
+  "_id": {
+    "$oid": "6077c9d4593f17dca92b96db"
+  },
+  "kd1234": [
+    "kd1234",
+    "dsadsa@sdsad.com",
+    "58b4e38f66bcdb546380845d6af27187",
+    true
+  ]
+}]
